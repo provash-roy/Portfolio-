@@ -97,7 +97,7 @@ export function ModeToggle() {
             ${theme === "light" ? "bg-zinc-800 text-cyan-400" : ""}
           `}
         >
-          ☀️ Light
+          Light
         </DropdownMenuItem>
 
         <DropdownMenuItem
@@ -111,7 +111,7 @@ export function ModeToggle() {
             ${theme === "dark" ? "bg-zinc-800 text-cyan-400" : ""}
           `}
         >
-          🌙 Dark
+          Dark
         </DropdownMenuItem>
 
         <DropdownMenuItem
@@ -125,7 +125,7 @@ export function ModeToggle() {
             ${theme === "system" ? "bg-zinc-800 text-cyan-400" : ""}
           `}
         >
-          💻 System
+          System
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
