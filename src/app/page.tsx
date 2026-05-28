@@ -5,6 +5,7 @@ import ProjectSection from "@/components/project-section";
 import ContactSection from "@/components/contact-section";
 import CTASection from "@/components/cta-section";
 import Footer from "@/components/footer-section";
+import SkillMap from "@/components/skill-map";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <ProjectSection />
         <ContactSection />
         <CTASection />
+        <SkillMap/>
         <Footer />
       </main>
     </div>
