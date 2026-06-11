@@ -33,7 +33,6 @@ import {
 import Container from "./container";
 import SkillCard from "./skill-card";
 
-
 // ================= FRONTEND =================
 const frontendSkills = [
   { id: "react", name: "React", icon: Atom },
@@ -92,8 +91,11 @@ const otherSkills = [
 
 export default function SkillSection() {
   return (
-    <Container>
-      <section className="max-w-7xl mx-auto min-h-screen bg-white dark:bg-[#020817]  py-20 px-12 ">
+    <section
+      id="skills"
+      className="max-w-7xl mx-auto min-h-screen bg-white dark:bg-[#020817]  py-20 px-12 "
+    >
+      <Container>
         <div className="max-w-7xl mx-auto text-center">
           <div className="mb-12 text-center">
             <p className="text-cyan-500 font-semibold uppercase tracking-[0.35em] text-sm">
@@ -116,7 +118,7 @@ export default function SkillSection() {
           <SkillCard title="DevOps" icon={Cloud} skills={devopsSkills} />
           <SkillCard title="Other" icon={Terminal} skills={otherSkills} />
         </div>
-      </section>
-    </Container>
+      </Container>
+    </section>
   );
 }

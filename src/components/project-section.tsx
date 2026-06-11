@@ -1,9 +1,10 @@
 import React from "react";
 import Container from "./container";
 import { projects } from "@/constants/projects";
-import { ArrowRight, Briefcase } from "lucide-react";
+import { ArrowRight, Briefcase, ExternalLink } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import { FaGithub } from "react-icons/fa";
 
 export default function ProjectSection() {
   return (
@@ -40,16 +41,35 @@ export default function ProjectSection() {
                 <p className="mt-6 text-sm uppercase tracking-[0.2em] text-zinc-500">
                   {project.tech}
                 </p>
-                <Button
-                  variant="link"
-                  asChild
-                  className="mt-8 inline-flex items-center gap-2 text-cyan-500 font-medium hover:text-cyan-400"
-                >
-                  <Link href={project.link}>
-                    Learn more
-                    <ArrowRight size={18} />
-                  </Link>
-                </Button>
+                <div className="mt-8 flex flex-wrap items-center gap-3">
+                  <Button asChild className="flex items-center gap-2">
+                    <Link href={project.live} target="_blank">
+                      <ExternalLink size={16} />
+                      Live Demo
+                    </Link>
+                  </Button>
+
+                  <Button
+                    variant="secondary"
+                    asChild
+                    className="flex items-center gap-2"
+                  >
+                    <Link href={project.github} target="_blank">
+                      <FaGithub size={16} />
+                      GitHub
+                    </Link>
+                  </Button>
+
+                  <Button
+                    variant="link"
+                    asChild
+                    className="ml-auto text-cyan-500"
+                  >
+                    <Link href={project.link}>
+                      Learn more <ArrowRight size={16} />
+                    </Link>
+                  </Button>
+                </div>
               </article>
             ))}
           </div>
@@ -57,5 +77,4 @@ export default function ProjectSection() {
       </Container>
     </section>
   );
-
 }

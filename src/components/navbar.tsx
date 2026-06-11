@@ -17,7 +17,6 @@ export default function Navbar() {
     { name: "Home", href: "#" },
     { name: "About", href: "#about" },
     { name: "Skills", href: "#skills" },
-    { name: "Services", href: "#services" },
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
   ];
@@ -38,12 +37,12 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Menu */}
-        <div className="bg-white shadow-md bg-opacity-50 p-2 rounded-md hidden md:flex items-center gap-8">
+        <div className="shadow-md bg-opacity-50 p-2 rounded-md hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="text-black hover:text-cyan-400 transition duration-300"
+              className="text-black  dark:text-zinc-100 hover:text-cyan-400 dark:hover:text-cyan-400 transition duration-300"
             >
               {link.name}
             </Link>
