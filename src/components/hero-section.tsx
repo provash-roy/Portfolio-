@@ -25,12 +25,12 @@ export default function HeroSection() {
         <div className="space-y-8 text-center lg:text-left">
           {/* Heading */}
           <div className="space-y-5">
-            <p className="text-sm tracking-widest text-zinc-500 uppercase">
-              Full Stack Developer
+            <p className="text-cyan-500 font-semibold uppercase tracking-[0.35em] text-sm">
+              Full Stack Software Developer
             </p>
 
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight text-black dark:text-zinc-100">
-              Turning Vision Into Reality With Code & Design
+              Hi, I’m Provash Roy 
             </h1>
 
             <p className="text-zinc-600 dark:text-zinc-100 text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
