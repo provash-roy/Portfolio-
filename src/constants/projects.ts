@@ -9,7 +9,7 @@ export const projects = [
     live: "https://dashboard-demo.com",
     github: "https://github.com/provash/dashboard",
 
-    link:"/projects/dashboard",
+    link: "/projects/dashboard",
 
     problem:
       "Growing SaaS companies need a centralized place to monitor business metrics and customer activity.",
@@ -68,7 +68,7 @@ export const projects = [
 
     live: "https://foodwala-demo.com",
     github: "https://github.com/provash/foodwala",
-    link:"/projects/foodwala",
+    link: "/projects/foodwala",
 
     problem:
       "Restaurants often rely on multiple disconnected systems for orders and reservations.",
@@ -118,7 +118,7 @@ export const projects = [
 
     live: "https://safety-demo.com",
     github: "https://github.com/provash/nari-suraksha",
-    link:"/projects/nari-suraksha",
+    link: "/projects/nari-suraksha",
     problem:
       "Emergency situations require fast communication and location sharing.",
 
@@ -150,138 +150,5 @@ export const projects = [
     challenge: "Balancing user privacy with real-time emergency features.",
 
     learning: "Learned secure handling of sensitive location-based data.",
-  },
-
-  {
-    id: "log-analyzer",
-    title: "Automated Log Analyzer",
-    description:
-      "An enterprise tool that processes server logs and generates actionable insights from large datasets.",
-
-    tech: "Node.js · Express.js · MongoDB",
-
-    live: "https://log-demo.com",
-    github: "https://github.com/provash/log-analyzer",
-    link: "/projects/log-analyzer",
-    problem:
-      "Analyzing large log files manually is time-consuming and error-prone.",
-
-    goals: [
-      "Automate log processing",
-      "Detect anomalies",
-      "Generate operational reports",
-    ],
-
-    highlights: [
-      "Log upload system",
-      "Error categorization",
-      "Dashboard analytics",
-    ],
-
-    features: [
-      "File parsing",
-      "Pattern detection",
-      "Log filtering",
-      "Summary reports",
-    ],
-
-    architecture: ["Express backend", "MongoDB storage", "Analytics engine"],
-
-    performance: ["Batch processing", "Efficient data aggregation"],
-
-    security: ["File validation", "Access-controlled reports"],
-
-    challenge: "Processing large files while maintaining fast response times.",
-
-    learning: "Learned data processing and backend optimization techniques.",
-  },
-
-  {
-    id: "taskflow",
-    title: "Team Collaboration Platform",
-    description:
-      "A project management application inspired by Trello and Jira for tracking tasks and team productivity.",
-
-    tech: "Next.js · TypeScript · Prisma · PostgreSQL",
-
-    live: "https://taskflow-demo.com",
-    github: "https://github.com/provash/taskflow",
-    link: "/projects/taskflow",
-    problem: "Distributed teams need better visibility into project progress.",
-
-    goals: [
-      "Improve team collaboration",
-      "Track project status",
-      "Manage workflows efficiently",
-    ],
-
-    highlights: ["Kanban board", "Drag-and-drop tasks", "Activity timeline"],
-
-    features: [
-      "Task assignments",
-      "Project workspaces",
-      "Comments",
-      "Deadline tracking",
-    ],
-
-    architecture: ["Next.js frontend", "Prisma ORM", "PostgreSQL database"],
-
-    performance: ["Optimistic UI updates", "Efficient data fetching"],
-
-    security: ["Workspace permissions", "Protected APIs"],
-
-    challenge: "Keeping task updates synchronized across users.",
-
-    learning: "Learned collaborative application architecture.",
-  },
-
-  {
-    id: "ecommerce",
-    title: "Multi-Vendor E-commerce Platform",
-    description:
-      "A scalable online marketplace where multiple vendors can manage products and orders independently.",
-
-    tech: "Next.js · Stripe · Prisma · PostgreSQL",
-
-    live: "https://shop-demo.com",
-    github: "https://github.com/provash/ecommerce",
-    link: "/projects/ecommerce",
-
-    problem:
-      "Small businesses need a unified platform to sell products online.",
-
-    goals: [
-      "Support multiple vendors",
-      "Enable secure payments",
-      "Improve shopping experience",
-    ],
-
-    highlights: ["Vendor dashboard", "Stripe payments", "Order tracking"],
-
-    features: [
-      "Product management",
-      "Shopping cart",
-      "Checkout flow",
-      "Order history",
-    ],
-
-    architecture: [
-      "Next.js frontend",
-      "Stripe integration",
-      "Prisma ORM",
-      "PostgreSQL database",
-    ],
-
-    performance: [
-      "Image optimization",
-      "Server-side rendering",
-      "Caching strategies",
-    ],
-
-    security: ["Secure payments", "Authentication", "Role-based permissions"],
-
-    challenge: "Managing complex vendor-product-order relationships.",
-
-    learning: "Learned payment integration and scalable marketplace design.",
   },
 ];

@@ -50,7 +50,8 @@ export default async function ProjectDetailsPage({
   return (
     <Container>
       <section className="py-24">
-        <div className="mx-auto max-w-7xl px-12">
+        <div className="mx-auto max-w-7xl px-12>
+        ">
           {/* HERO */}
           <div className="rounded-[2rem] border border-zinc-800 bg-zinc-950 p-10 shadow-2xl">
             <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">

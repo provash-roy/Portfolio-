@@ -1,16 +1,16 @@
 "use client";
 
-import { LucideIcon } from "lucide-react";
+import type { ElementType } from "react";
 
 type Skill = {
   id: string;
   name: string;
-  icon: LucideIcon;
+  icon: ElementType;
 };
 
 type Props = {
   title: string;
-  icon: LucideIcon;
+  icon: ElementType;
   skills: Skill[];
 };
 

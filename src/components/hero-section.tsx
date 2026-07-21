@@ -7,7 +7,10 @@ import { Button } from "@/components/ui/button";
 
 export default function HeroSection() {
   return (
-    <section className=" bg-zinc-50 dark:bg-[#090a0f] min-h-[85vh] flex items-center  ">
+    <section
+      id="home"
+      className=" bg-zinc-50 dark:bg-[#090a0f] min-h-[85vh] flex items-center  "
+    >
       <div className="max-w-7xl mx-auto px-12 py-10 grid lg:grid-cols-2 gap-12 items-center ">
         {/* Left Image */}
         <div className="flex justify-center items-center ">
@@ -30,7 +33,7 @@ export default function HeroSection() {
             </p>
 
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight text-black dark:text-zinc-100">
-              Hi, I’m Provash Roy 
+              Hi, I’m Provash Roy
             </h1>
 
             <p className="text-zinc-600 dark:text-zinc-100 text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">

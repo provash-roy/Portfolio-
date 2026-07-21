@@ -1,20 +1,34 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, Moon } from "lucide-react";
+import { Menu } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ModeToggle } from "./mode-toggle";
-import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { Button } from "./ui/button";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const router = useRouter();
 
-  const pathname = usePathname();
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = [
-    { name: "Home", href: "#" },
+    { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
@@ -22,27 +36,29 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50">
-      <div
-        className={`max-w-7xl mx-auto p-6 h-16 flex items-center justify-between ${
-          pathname !== "/#" ? "border-b" : ""
-        }`}
-      >
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? "backdrop-blur-md bg-white/30 dark:bg-black/30 shadow-md"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto p-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link
-          href="/"
+          href="/#home"
           className="text-2xl font-bold text-black dark:text-zinc-100 tracking-wide"
         >
           Provash<span className="text-cyan-400">.</span>
         </Link>
 
         {/* Desktop Menu */}
-        <div className="shadow-md bg-opacity-50 p-2 rounded-md hidden md:flex items-center gap-8">
+        <div className="shadow-md bg-white/20 dark:bg-black/20 backdrop-blur-md p-2 rounded-md hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="text-black  dark:text-zinc-100 hover:text-cyan-400 dark:hover:text-cyan-400 transition duration-300"
+              className="text-black dark:text-zinc-100 hover:text-cyan-400 transition"
             >
               {link.name}
             </Link>
@@ -54,74 +70,51 @@ export default function Navbar() {
           <ModeToggle />
 
           <Link
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/provash-roy-687a703a0/"
             target="_blank"
-            className="p-2 rounded-full bg-zinc-800 text-zinc-300 hover:text-cyan-400 transition"
+            className="p-2 rounded-full bg-zinc-800 text-zinc-300 hover:text-cyan-400"
           >
             <FaLinkedin size={18} />
           </Link>
 
           <Link
-            href="https://github.com"
+            href="https://github.com/provash-roy"
             target="_blank"
-            className="p-2 rounded-full bg-zinc-800 text-zinc-300 hover:text-cyan-400 transition"
+            className="p-2 rounded-full bg-zinc-800 text-zinc-300 hover:text-cyan-400"
           >
             <FaGithub size={18} />
           </Link>
 
-          <button className="px-5 py-2 rounded-xl bg-cyan-400 text-black font-semibold hover:bg-cyan-300 transition">
+          <Button
+            onClick={() => router.push("/#contact")}
+            className="px-5 rounded-xl bg-cyan-400 text-black hover:bg-cyan-300"
+          >
             Hire Me
-          </button>
+          </Button>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button onClick={() => setOpen(!open)} className="md:hidden text-white">
+        {/* Mobile */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="md:hidden text-black dark:text-white"
+        >
           <Menu size={28} />
         </button>
       </div>
 
       {/* Mobile Menu */}
       {open && (
-        <div className="md:hidden border-t border-zinc-800 bg-black px-6 py-4 flex flex-col gap-5">
+        <div className="md:hidden backdrop-blur-md bg-black/50 px-6 py-4 flex flex-col gap-5">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="text-zinc-300 hover:text-cyan-400 transition"
+              className="text-zinc-300 hover:text-cyan-400"
             >
               {link.name}
             </Link>
           ))}
-
-          <div className="flex items-center gap-4 pt-4 border-t border-zinc-800">
-            <button className="p-2 rounded-full bg-zinc-800 text-zinc-300">
-              <Moon size={18} />
-            </button>
-
-            <Link
-              href="https://linkedin.com"
-              target="_blank"
-              className="p-2 rounded-full bg-zinc-800 text-zinc-300"
-            >
-              <FaLinkedin size={18} />
-            </Link>
-
-            <Link
-              href="https://github.com"
-              target="_blank"
-              className="p-2 rounded-full bg-zinc-800 text-zinc-300"
-            >
-              <FaGithub size={18} />
-            </Link>
-          </div>
-
-          <Button
-            size="sm"
-            className="w-full py-2 rounded bg-cyan-400 text-black font-semibold"
-          >
-            Hire Me
-          </Button>
         </div>
       )}
     </nav>
